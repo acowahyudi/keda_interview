@@ -1,0 +1,474 @@
+{
+	"info": {
+		"_postman_id": "cac29479-8fc1-49d9-8927-e59b9407d1fb",
+		"name": "keda_interview",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "History Chat",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/indexChat",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"indexChat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Chat Customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "receive_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "Hallo Customer 2, saya baru saja membeli barang yang sama",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}/chatToCustomer",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"chatToCustomer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Report To Staff",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "receive_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "user_reported_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "Permisi, saya mau report customer 2 karena tidak pernah membalas pesan saya",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}/reportToStaff",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"reportToStaff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Feedback To Staff",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "receive_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "Mohon pelayanan lebih ditingkatkan lagi",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}/feedbackToStaff",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"feedbackToStaff"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Staff",
+			"item": [
+				{
+					"name": "All History Chat",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/allChatStaff",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"allChatStaff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Own History Chat",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{HOST}}/ownChatStaff",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"ownChatStaff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Chat Customer or Staff",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "receive_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "Hallo Customer 1, terima kasih atas saran dan masukannya",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}/chatCustomerOrStaff",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"chatCustomerOrStaff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Customer",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/deleteCustomer/5",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"deleteCustomer",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "staff@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "dummydummy",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST}}/auth/login",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/auth/logout",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List All user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/userList",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"userList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Message Type",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/typeMessageList",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"typeMessageList"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "http://localhost:8000/api"
+		},
+		{
+			"key": "TOKEN",
+			"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYyODY3MDk0MSwiZXhwIjoxNjI4Njc0NTQxLCJuYmYiOjE2Mjg2NzA5NDEsImp0aSI6ImVYeUhoMU5USFRDODdoSUciLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.AUaQEhsK7G7fVkLdDG7xGKpOWIHUDX6DvxXZv7hjKug"
+		}
+	]
+}
